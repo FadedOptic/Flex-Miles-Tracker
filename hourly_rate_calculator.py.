@@ -1,0 +1,16 @@
+def calculate_hourly_rate(gas_mileage, route_distance, maintenance_cost, gas_price, total_pay, hours_in_shift):
+    gas_cost = (route_distance / gas_mileage) * gas_price
+    total_cost = gas_cost + maintenance_cost
+    net_pay = total_pay - total_cost
+    hourly_rate = net_pay / hours_in_shift
+    return hourly_rate
+
+gas_mileage = float(input("Enter your car's gas mileage (miles per gallon): "))
+route_distance = float(input("Enter the route distance (miles): "))
+maintenance_cost = float(input("Enter the maintenance cost per shift ($): "))
+gas_price = 3.45  # price per gallon
+total_pay = float(input("Enter your total pay for the shift ($): "))
+hours_in_shift = float(input("Enter the number of hours in the shift: "))
+
+hourly_rate = calculate_hourly_rate(gas_mileage, route_distance, maintenance_cost, gas_price, total_pay, hours_in_shift)
+print(f"Your actual hourly rate is: ${hourly_rate:.2f}")
